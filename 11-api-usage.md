@@ -161,4 +161,4 @@ curl https://api.openai.com/v1/chat/completions \
 
 ---
 
-[← 目次に戻る](./) | [前: 用途特化モデル](10-specialized-models)
+[← 目次に戻る](./) | [前: 用途特化モデル](10-specialized-models) | [次: Claude Code以外の選択肢 →](12-alternatives)
