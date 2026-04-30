@@ -4,29 +4,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} | {{ site.title }}</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
-      <nav class="site-nav">
-        <a href="{{ '/' | relative_url }}">Home</a>
+      <div class="header-left">
+        <a href="{{ '/' | relative_url }}" class="site-logo">AI活用ガイド</a>
+        <span class="header-subtitle">プレボ会社向け共有資料</span>
+      </div>
+      <nav class="header-nav">
+        <a href="{{ '/' | relative_url }}">目次</a>
         <a href="https://github.com/kuruusuniku/sharing" target="_blank">GitHub</a>
       </nav>
     </div>
   </header>
 
-  <main class="content" id="content">
-    <article class="article">
+  <div class="page-wrapper">
+    {% if page.url == '/' or page.url == '/index.html' %}
+    <main class="content content--home" id="content">
       {{ content }}
-    </article>
-  </main>
+    </main>
+    {% else %}
+    <main class="content content--article" id="content">
+      <article>
+        {{ content }}
+      </article>
+    </main>
+    {% endif %}
+  </div>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>&copy; 2026 AI活用ガイド — プレボ会社向け共有資料</p>
+      <p class="footer-text">&copy; 2026 AI活用ガイド — プレボ会社向け共有資料</p>
     </div>
   </footer>
 </body>
