@@ -79,6 +79,104 @@ MoE モデル
 | Mistral Large 3 | 675B | 41B | 重量級 |
 | DeepSeek V4 | ~1T | ~35B | 重量級 |
 
+## Hugging Face — オープンAIのハブ
+
+公式サイト: [huggingface.co](https://huggingface.co/)
+
+オープンLLMの世界に入るなら、**Hugging Face は避けて通れないプラットフォーム**です。「AIの GitHub」とも呼ばれ、モデルの公開・検索・ダウンロード・実行のすべてがここに集約されています。
+
+### 何ができるのか
+
+| 機能 | 規模 | 説明 |
+|------|------|------|
+| **Models** | 200万以上 | モデルの検索・ダウンロード・ホスティング |
+| **Datasets** | 50万以上 | 学習用データセットの公開・共有 |
+| **Spaces** | 100万以上 | AIアプリのデモを公開・試用できる |
+
+この章で紹介した Qwen, Llama, Mistral, Gemma, gpt-oss——**すべてのオープンモデルが Hugging Face に公開**されています。
+
+### モデルの探し方
+
+[huggingface.co/models](https://huggingface.co/models) でモデルを検索できます。
+
+```
+例: Qwen 3.6 を探す場合
+  → 検索バーに "Qwen3.6" と入力
+  → ダウンロード数・いいね数でソート
+  → モデルカードで性能・ライセンス・使い方を確認
+```
+
+**モデルカード**には以下の情報が載っています：
+- モデルの説明・用途
+- ベンチマークスコア
+- ライセンス（Apache 2.0, MIT 等）
+- 使い方のコード例
+- 量子化バージョン（GGUF等）の有無
+
+### GGUF と量子化
+
+Hugging Face で「GGUF」というファイル形式をよく見かけます。これはローカル実行に最適化された形式です。
+
+```
+元のモデル（safetensors）
+  → 高精度だがサイズが大きい（例: 27B → 約54GB）
+
+量子化モデル（GGUF）
+  → 精度を少し落としてサイズを圧縮
+  → Q4_K_M: 約15GB（品質と圧縮のバランスが最良）
+  → Q2_K: 約10GB（さらに圧縮、品質やや低下）
+```
+
+**LM Studio や Ollama は GGUF 形式をそのまま読み込めます。** Hugging Face で GGUF を探してダウンロードし、LM Studio にドラッグ＆ドロップするだけです。
+
+### Spaces — AIデモを試す
+
+[huggingface.co/spaces](https://huggingface.co/spaces) では、ブラウザ上でAIアプリを即座に試せます。
+
+- 画像生成（Stable Diffusion, FLUX）
+- 音声認識（Whisper）
+- チャットボット（各種LLM）
+- 翻訳、要約、コード生成
+
+ダウンロードやインストール不要で、**モデルの性能を事前に確認できる**ので便利です。
+
+### Transformers ライブラリ
+
+Hugging Face が開発するオープンソースの Python ライブラリ。GitHub Star 16万以上。
+
+```python
+from transformers import pipeline
+
+# 感情分析
+classifier = pipeline("sentiment-analysis")
+result = classifier("This product is amazing!")
+# [{'label': 'POSITIVE', 'score': 0.9998}]
+
+# テキスト生成
+generator = pipeline("text-generation", model="Qwen/Qwen3.6-27B")
+output = generator("def fibonacci(n):")
+```
+
+プログラムからモデルを呼び出すときの事実上の標準ライブラリです。
+
+### 料金
+
+| 用途 | 料金 |
+|------|------|
+| モデル・データセットの閲覧・ダウンロード | **無料** |
+| Spaces（CPU） | **無料** |
+| Spaces（GPU） | 有料（$0.60/時間〜） |
+| Inference Endpoints（本番API） | 有料（$0.60/時間〜） |
+| Team / Enterprise | $20/ユーザー/月〜 |
+
+個人でモデルをダウンロードして LM Studio で動かすだけなら**完全無料**です。
+
+### HuggingChat
+
+[huggingface.co/chat](https://huggingface.co/chat/) — **無料で使えるチャットUI**。
+
+最新のオープンモデル（Qwen, Llama, Mistral 等）をブラウザから試せます。ChatGPT の無料版のような体験ですが、バックエンドがオープンモデルという点が異なります。モデルの切り替えも自由。
+
 ## ローカル実行ツール
 
 ### LM Studio
