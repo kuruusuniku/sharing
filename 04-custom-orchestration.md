@@ -198,4 +198,4 @@ Tier-3: Devil's Advocate（品質ゲートキーパー）※Opus使用
 
 ---
 
-[← 目次に戻る](./) | [前: MCP サーバー](03-mcp-servers)
+[← 目次に戻る](./) | [前: MCP サーバー](03-mcp-servers) | [次: ベストプラクティス →](05-claude-code-best-practices)

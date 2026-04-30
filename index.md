@@ -13,5 +13,6 @@ title: AI活用ガイド
 - [3. MCP サーバーの活用](03-mcp-servers)
 - [4. 手製 AI オーケストレーションツール](04-custom-orchestration)
 - [5. Claude Code ベストプラクティス](05-claude-code-best-practices)
+- [6. Skills（スキル）の活用](06-skills)
 
 > この資料はプレボ会社の同僚に向けて、AIツールの実践的な活用方法を共有するために作成しました。

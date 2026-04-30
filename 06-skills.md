@@ -1,0 +1,205 @@
+---
+layout: default
+title: Skills（スキル）の活用
+---
+
+# 6. Skills（スキル）の活用
+
+![CLAUDE.md vs SKILL.md](assets/images/ch06-skills.svg)
+
+## スキルとは
+
+スキルは Claude Code の**再利用可能なワークフロー**です。SKILL.md というファイルに手順や知識を書いておくと、必要なときに Claude が自動で読み込んだり、`/skill-name` で手動で呼び出したりできます。
+
+「毎回同じ指示を貼り付けている」「CLAUDE.md が長くなりすぎた」と感じたら、スキルに切り出すタイミングです。
+
+## CLAUDE.md との違い
+
+| | CLAUDE.md | スキル（SKILL.md） |
+|--|-----------|-------------------|
+| **ロードタイミング** | 毎回の会話で常にロード | 必要なときだけロード |
+| **用途** | プロジェクト全体の設定・規約 | 特定のワークフロー・手順 |
+| **コンテキスト消費** | 常に消費する | 使うときだけ消費 |
+| **長さの目安** | 短くするべき | 500行以下を推奨 |
+| **呼び出し方** | 自動 | `/skill-name` or Claude が自動判断 |
+
+**使い分けの原則：** CLAUDE.md は「全会話で必要な情報」だけに絞る。特定のタスクでしか使わない手順はスキルにする。
+
+## スキルの作り方
+
+`.claude/skills/` ディレクトリに SKILL.md を作成します。
+
+### 基本構造
+
+```
+.claude/skills/
+  └── deploy/
+      └── SKILL.md
+```
+
+```markdown
+---
+name: deploy
+description: 本番環境へのデプロイ手順
+---
+
+# デプロイ手順
+
+1. テストを実行して全パスを確認
+2. バージョンを更新
+3. git tag を作成
+4. main にマージ
+5. デプロイコマンドを実行
+```
+
+### フロントマターの設定
+
+```yaml
+---
+name: deploy                      # スキル名（省略時はディレクトリ名）
+description: 本番デプロイ手順       # Claudeが自動呼び出しするかの判断基準
+disable-model-invocation: true    # Claudeの自動呼び出しを禁止（手動のみ）
+---
+```
+
+| フィールド | 説明 |
+|-----------|------|
+| `name` | `/name` で呼び出すときの名前 |
+| `description` | Claude が「このスキルを使うべきか」を判断する材料。具体的に書く |
+| `disable-model-invocation` | `true` にすると `/name` でしか呼べない。デプロイや破壊的操作に推奨 |
+| `user-invocable` | `false` にするとユーザーからは呼べず、Claude の自動判断のみ |
+
+## 呼び出しの制御
+
+スキルには3つの呼び出しモードがあります。
+
+### ユーザーも Claude も呼べる（デフォルト）
+
+```yaml
+---
+name: review
+description: コードレビューのチェックリスト
+---
+```
+
+Claude が「レビューが必要そうだ」と判断したら自動で読み込む。`/review` で手動呼び出しも可能。
+
+### ユーザーだけが呼べる（副作用あるタスク向け）
+
+```yaml
+---
+name: deploy
+description: 本番環境へのデプロイ
+disable-model-invocation: true
+---
+```
+
+デプロイ、DB マイグレーション、外部API呼び出しなど、**勝手に実行されると困る操作**に使う。
+
+### Claude だけが呼べる（背景知識）
+
+```yaml
+---
+name: api-conventions
+description: APIの設計規約
+user-invocable: false
+---
+```
+
+Claude がAPI関連のタスクに取り組むとき、自動で読み込む背景知識。
+
+## 実用的なスキル例
+
+### Issue を修正するスキル
+
+```markdown
+---
+name: fix-issue
+description: GitHub Issue を分析して修正する
+disable-model-invocation: true
+---
+
+GitHub Issue を分析・修正する: $ARGUMENTS
+
+1. `gh issue view` で Issue の詳細を取得
+2. 問題を理解し、関連ファイルを検索
+3. 修正を実装
+4. テストを書いて実行
+5. コミットしてPRを作成
+```
+
+```bash
+# 使い方
+/fix-issue 1234
+```
+
+`$ARGUMENTS` にはスラッシュコマンドの引数が入ります。
+
+### コードレビューのスキル
+
+```markdown
+---
+name: review
+description: PRのコードレビュー
+---
+
+現在のブランチの差分をレビューする。
+
+チェック項目:
+- SQLインジェクション・XSSの脆弱性
+- エラーハンドリングの漏れ
+- パフォーマンスへの影響
+- テストの網羅性
+```
+
+### API設計規約のスキル
+
+```markdown
+---
+name: api-conventions
+description: REST API の設計規約
+user-invocable: false
+---
+
+# API 設計規約
+
+- URL パスは kebab-case
+- JSON プロパティは camelCase
+- リスト系は必ずページネーション付き
+- バージョンはURLパスで管理（/v1/, /v2/）
+```
+
+## スキルの配置場所
+
+| 場所 | スコープ |
+|------|---------|
+| `~/.claude/skills/` | 全プロジェクトで使える個人スキル |
+| `.claude/skills/` | プロジェクト固有。git で共有可能 |
+
+チームで使うスキルは `.claude/skills/` に置いて git にコミットすれば、メンバー全員が同じワークフローを使えます。
+
+## スキルの発見とインストール
+
+```bash
+# 利用可能なスキルを検索
+/find-skills
+
+# プラグイン（スキルのバンドル）を閲覧・インストール
+/plugin
+```
+
+プラグインはスキル・フック・サブエージェント・MCP サーバーをまとめたパッケージです。コミュニティや Anthropic が公開しており、ワンコマンドでインストールできます。
+
+## 組み込みスキルの例
+
+Claude Code にはいくつかのスキルがプリセットされています。
+
+| スキル | 説明 |
+|--------|------|
+| `/simplify` | 変更したコードの品質・効率を改善 |
+| `/loop` | プロンプトを定期的に繰り返し実行 |
+| `/init` | CLAUDE.md の自動生成 |
+
+---
+
+[← 目次に戻る](./) | [前: ベストプラクティス](05-claude-code-best-practices)

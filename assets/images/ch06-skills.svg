@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 160">
+  <rect width="700" height="160" fill="#f8f7f5" rx="6"/>
+  <!-- CLAUDE.md vs Skills comparison -->
+  <g transform="translate(80, 20)">
+    <!-- CLAUDE.md -->
+    <rect x="0" y="0" width="200" height="110" rx="8" fill="#fff" stroke="#e0ddd8" stroke-width="1"/>
+    <rect x="0" y="0" width="200" height="30" rx="8" fill="#f0eeea"/>
+    <rect x="0" y="22" width="200" height="8" fill="#f0eeea"/>
+    <text x="100" y="20" text-anchor="middle" font-family="monospace" font-size="12" fill="#1a1a1a" font-weight="bold">CLAUDE.md</text>
+    <text x="100" y="50" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#666">常にロードされる</text>
+    <text x="100" y="66" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#666">プロジェクト全体の設定</text>
+    <rect x="30" y="78" width="140" height="20" rx="4" fill="#fff3e0" stroke="#c05621" stroke-width="1"/>
+    <text x="100" y="92" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#c05621">短く保つ必要あり</text>
+  </g>
+  <g transform="translate(330, 55)">
+    <text x="0" y="10" font-family="sans-serif" font-size="20" fill="#999">vs</text>
+  </g>
+  <g transform="translate(400, 20)">
+    <!-- Skills -->
+    <rect x="0" y="0" width="200" height="110" rx="8" fill="#fff" stroke="#e0ddd8" stroke-width="1"/>
+    <rect x="0" y="0" width="200" height="30" rx="8" fill="#ebf4ff"/>
+    <rect x="0" y="22" width="200" height="8" fill="#ebf4ff"/>
+    <text x="100" y="20" text-anchor="middle" font-family="monospace" font-size="12" fill="#2b6cb0" font-weight="bold">SKILL.md</text>
+    <text x="100" y="50" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#666">必要な時だけロード</text>
+    <text x="100" y="66" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#666">特定ワークフロー向け</text>
+    <rect x="30" y="78" width="140" height="20" rx="4" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1"/>
+    <text x="100" y="92" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#2e7d32">コンテキスト効率が良い</text>
+  </g>
+</svg>
