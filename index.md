@@ -3,6 +3,8 @@ layout: default
 title: AI活用ガイド
 ---
 
+![AI活用ガイド](assets/images/hero.svg)
+
 # AI活用ガイド
 
 - [0. はじめに — AIの進化が閾値を超えた](00-introduction)

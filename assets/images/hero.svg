@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f0fe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5e6d8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="240" fill="url(#g1)" rx="8"/>
+  <!-- Brain/AI icon -->
+  <g transform="translate(360, 70)">
+    <circle cx="40" cy="40" r="36" fill="none" stroke="#2b6cb0" stroke-width="2"/>
+    <path d="M24 44 C24 30, 40 20, 40 32 C40 20, 56 30, 56 44" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M28 52 C28 44, 52 44, 52 52" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="34" cy="38" r="2.5" fill="#2b6cb0"/>
+    <circle cx="46" cy="38" r="2.5" fill="#2b6cb0"/>
+    <!-- Connection nodes -->
+    <circle cx="0" cy="40" r="4" fill="#c05621" opacity="0.6"/>
+    <circle cx="80" cy="40" r="4" fill="#c05621" opacity="0.6"/>
+    <circle cx="40" cy="0" r="4" fill="#c05621" opacity="0.6"/>
+    <circle cx="40" cy="80" r="4" fill="#c05621" opacity="0.6"/>
+    <line x1="4" y1="40" x2="20" y2="40" stroke="#c05621" stroke-width="1.5" opacity="0.4"/>
+    <line x1="60" y1="40" x2="76" y2="40" stroke="#c05621" stroke-width="1.5" opacity="0.4"/>
+    <line x1="40" y1="4" x2="40" y2="20" stroke="#c05621" stroke-width="1.5" opacity="0.4"/>
+    <line x1="40" y1="60" x2="40" y2="76" stroke="#c05621" stroke-width="1.5" opacity="0.4"/>
+  </g>
+  <!-- Title -->
+  <text x="400" y="190" text-anchor="middle" font-family="serif" font-size="28" fill="#1a1a1a" letter-spacing="4">AI 活用ガイド</text>
+  <text x="400" y="218" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#999">Practical Guide for AI-powered Workflows</text>
+</svg>

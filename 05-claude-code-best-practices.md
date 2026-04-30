@@ -5,6 +5,8 @@ title: Claude Code を上手く使うためのベストプラクティス
 
 # 5. Claude Code を上手く使うためのベストプラクティス
 
+![ベストプラクティス 4つの柱](assets/images/ch05-tips.svg)
+
 Anthropic が公式に公開しているベストプラクティスガイドのポイントをまとめます。
 
 > 原文: [Best Practices for Claude Code](https://www.anthropic.com/engineering/claude-code-best-practices)

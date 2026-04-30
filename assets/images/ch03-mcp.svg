@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 170">
+  <rect width="700" height="170" fill="#f8f7f5" rx="6"/>
+  <!-- Claude center -->
+  <g transform="translate(290, 30)">
+    <rect width="120" height="40" rx="8" fill="#2b6cb0"/>
+    <text x="60" y="25" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#fff" font-weight="bold">Claude</text>
+  </g>
+  <!-- MCP Protocol line -->
+  <line x1="200" y1="70" x2="500" y2="70" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="350" y="88" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#2b6cb0">MCP Protocol</text>
+  <!-- Connectors -->
+  <line x1="160" y1="105" x2="160" y2="88" stroke="#d8d5ce" stroke-width="1.5"/>
+  <line x1="280" y1="105" x2="280" y2="88" stroke="#d8d5ce" stroke-width="1.5"/>
+  <line x1="400" y1="105" x2="400" y2="88" stroke="#d8d5ce" stroke-width="1.5"/>
+  <line x1="520" y1="105" x2="520" y2="88" stroke="#d8d5ce" stroke-width="1.5"/>
+  <!-- Service boxes -->
+  <g transform="translate(120, 105)">
+    <rect width="80" height="36" rx="6" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="40" y="16" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#2b6cb0" font-weight="bold">JIRA</text>
+    <text x="40" y="28" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#666">チケット管理</text>
+  </g>
+  <g transform="translate(240, 105)">
+    <rect width="80" height="36" rx="6" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="40" y="16" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#2b6cb0" font-weight="bold">GitHub</text>
+    <text x="40" y="28" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#666">Issue / PR</text>
+  </g>
+  <g transform="translate(360, 105)">
+    <rect width="80" height="36" rx="6" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="40" y="16" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#2b6cb0" font-weight="bold">Slack</text>
+    <text x="40" y="28" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#666">メッセージ</text>
+  </g>
+  <g transform="translate(480, 105)">
+    <rect width="80" height="36" rx="6" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="40" y="16" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#2b6cb0" font-weight="bold">Calendar</text>
+    <text x="40" y="28" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#666">スケジュール</text>
+  </g>
+</svg>

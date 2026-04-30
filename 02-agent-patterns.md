@@ -5,6 +5,8 @@ title: Anthropic 公式 AI エージェントパターン
 
 # 2. Anthropic 公式 AI エージェントパターン
 
+![5つのワークフローパターン](assets/images/ch02-patterns.svg)
+
 Anthropic は「[Building Effective Agents](https://www.anthropic.com/research/building-effective-agents)」という公式ガイドで、AI エージェントの設計パターンを体系化しています。
 
 重要な原則：**「複雑さは実証可能な改善があるときのみ追加する」**

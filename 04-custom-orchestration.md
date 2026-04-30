@@ -5,6 +5,8 @@ title: 手製 AI オーケストレーションツール
 
 # 4. 手製 AI オーケストレーションツール
 
+![sub-company と koumei の構成](assets/images/ch04-orchestration.svg)
+
 Claude Code のスキル（プラグイン）として開発した、2つのAIオーケストレーションツールを紹介します。
 
 Anthropic 公式のエージェントパターン（[前章参照](02-agent-patterns)）を実務に落とし込んだ実装例です。

@@ -5,6 +5,8 @@ title: Claude Code のインストールと基本操作
 
 # 1. Claude Code のインストールと基本操作
 
+![Claude Code ターミナル](assets/images/ch01-terminal.svg)
+
 Claude Code は Anthropic が提供する公式のAIコーディングアシスタントCLIです。ターミナルから直接 Claude と対話しながら、コードの生成・編集・デバッグ・リファクタリングなどを行えます。
 
 ## インストール

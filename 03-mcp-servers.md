@@ -5,6 +5,8 @@ title: MCP サーバーの活用
 
 # 3. MCP サーバーの活用
 
+![MCP サーバー構成](assets/images/ch03-mcp.svg)
+
 ## MCP（Model Context Protocol）とは
 
 MCP は Anthropic が策定したオープンプロトコルで、LLM に外部ツールやデータソースへのアクセスを提供します。「LLM版のUSBポート」のようなもので、様々なサービスをプラグインとして接続できます。
