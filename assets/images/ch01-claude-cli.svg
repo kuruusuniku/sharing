@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 200">
+  <rect width="700" height="200" fill="#f8f7f5" rx="6"/>
+  <g transform="translate(130, 15)">
+    <!-- Terminal window -->
+    <rect width="440" height="170" rx="10" fill="#1e1e2e" stroke="#555" stroke-width="1"/>
+    <!-- Title bar -->
+    <rect width="440" height="30" rx="10" fill="#2d2d3d"/>
+    <rect y="22" width="440" height="8" fill="#2d2d3d"/>
+    <circle cx="18" cy="15" r="5.5" fill="#ff5f57"/>
+    <circle cx="36" cy="15" r="5.5" fill="#febc2e"/>
+    <circle cx="54" cy="15" r="5.5" fill="#28c840"/>
+    <text x="220" y="19" text-anchor="middle" font-family="monospace" font-size="11" fill="#888">claude</text>
+    <!-- Claude character (simplified) -->
+    <g transform="translate(30, 50)">
+      <!-- Sparkle character -->
+      <text x="0" y="20" font-family="monospace" font-size="28" fill="#f9e2af">✦</text>
+      <text x="30" y="16" font-family="monospace" font-size="13" fill="#cdd6f4"> Claude Code v1.0</text>
+    </g>
+    <!-- Prompt -->
+    <text x="30" y="100" font-family="monospace" font-size="12" fill="#89b4fa">❯</text>
+    <text x="48" y="100" font-family="monospace" font-size="12" fill="#cdd6f4">このプロジェクトの構成を説明して</text>
+    <!-- Response animation dots -->
+    <text x="30" y="125" font-family="monospace" font-size="12" fill="#a6e3a1">⠋</text>
+    <text x="48" y="125" font-family="monospace" font-size="12" fill="#585b70">Thinking...</text>
+    <!-- Status bar -->
+    <rect y="148" width="440" height="22" rx="0" fill="#232336"/>
+    <rect x="0" y="148" width="440" height="1" fill="#444"/>
+    <text x="12" y="163" font-family="monospace" font-size="9" fill="#585b70">Opus 4.7</text>
+    <text x="360" y="163" font-family="monospace" font-size="9" fill="#585b70">~/my-project</text>
+  </g>
+</svg>

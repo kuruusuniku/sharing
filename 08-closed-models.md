@@ -3,13 +3,15 @@ layout: default
 title: クローズドLLMモデル概説
 ---
 
-# 7. クローズドLLMモデル概説
+# 8. クローズドLLMモデル概説
 
 ソースコードや重みが非公開の、企業が提供するLLMサービスです。高性能だが、各社のAPI・アプリ経由でのみ利用できます。
 
 ## 主要モデル一覧
 
 ### Anthropic — Claude
+
+公式サイト: [anthropic.com](https://www.anthropic.com/) / [claude.ai](https://claude.ai/)
 
 | モデル | 特徴 |
 |--------|------|
@@ -23,6 +25,8 @@ title: クローズドLLMモデル概説
 
 ### OpenAI — GPT
 
+公式サイト: [openai.com](https://openai.com/) / [chatgpt.com](https://chatgpt.com/)
+
 | モデル | 特徴 |
 |--------|------|
 | **GPT-5.5** | 最新フラッグシップ。推論力・マルチモーダル |
@@ -35,24 +39,30 @@ title: クローズドLLMモデル概説
 
 ### Google — Gemini
 
+公式サイト: [deepmind.google](https://deepmind.google/technologies/gemini/) / [gemini.google.com](https://gemini.google.com/)
+
 | モデル | 特徴 |
 |--------|------|
-| **Gemini 2.5 Pro** | 長いコンテキスト（最大100万トークン）、推論能力強化 |
-| **Gemini 2.5 Flash** | 高速・低コスト。日常利用向け |
+| **Gemini 3.1 Pro** | 最新フラッグシップ。複雑な多段階エージェントワークフローに最適化 |
+| **Gemini 3.1 Flash** | 高速・低コスト。日常利用向け |
+| **Gemini 3.1 Flash Live** | リアルタイム音声対話に対応 |
 
-**強み：** 超長文コンテキスト、Google 検索との統合、Android/Google Workspace連携
+**強み：** 超長文コンテキスト、Google 検索との統合、Android/Google Workspace連携、Computer Use対応、ロボティクスモデル
 
 **現状：** 仕事で本格的に使うにはまだ閾値を超えていない印象。日常的な調べものや要約には十分使える。今後の進化に期待。
 
 ### xAI — Grok
 
+公式サイト: [x.ai](https://x.ai/) / [grok.com](https://grok.com/)
+
 | モデル | 特徴 |
 |--------|------|
-| **Grok 3** | X（旧Twitter）のリアルタイムデータにアクセス可能 |
+| **Grok 4.3 Beta** | 200万トークンのコンテキスト（西側クローズドモデル最大）、16エージェント並列処理、ネイティブ動画理解 |
+| **Grok 5**（予定） | 2026年Q2にベータ公開見込み |
 
-**強み：** リアルタイム情報、X プラットフォームとの統合
+**強み：** 超大規模コンテキスト、リアルタイム情報（X プラットフォーム統合）、マルチエージェント並列処理
 
-**現状：** エンジニアリング用途ではまだ限定的。情報収集やトレンド分析に活用できる可能性。
+**現状：** Grok 4.3 は SuperGrok Heavy（月額$300）限定のEarly Access。高額だが、コンテキスト長と並列処理能力は突出。エンジニアリング用途での実用性は今後に期待。
 
 ## 比較まとめ
 
@@ -76,4 +86,4 @@ title: クローズドLLMモデル概説
 
 ---
 
-[← 目次に戻る](./) | [前: Skills の活用](06-skills) | [次: オープンLLM →](08-open-models)
+[← 目次に戻る](./) | [前: OpenClaw](07-openclaw) | [次: オープンLLM →](09-open-models)

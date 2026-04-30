@@ -3,7 +3,7 @@ layout: default
 title: API経由でのLLM利用
 ---
 
-# 10. API経由でのLLM利用
+# 11. API経由でのLLM利用
 
 ChatGPT や Claude Desktop はチャットUIで使いますが、**API経由で使う**ことで、自分のツールやワークフローにLLMを組み込めます。
 
@@ -161,4 +161,4 @@ curl https://api.openai.com/v1/chat/completions \
 
 ---
 
-[← 目次に戻る](./) | [前: 用途特化モデル](09-specialized-models) | [次: OpenClaw →](11-openclaw)
+[← 目次に戻る](./) | [前: 用途特化モデル](10-specialized-models)

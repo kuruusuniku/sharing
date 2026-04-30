@@ -3,7 +3,7 @@ layout: default
 title: 用途特化モデルの活用
 ---
 
-# 9. 用途特化モデルの活用
+# 10. 用途特化モデルの活用
 
 汎用LLMだけがAIではありません。特定のタスクに特化したモデルを組み合わせることで、汎用モデルでは難しい精度や速度を実現できます。
 
@@ -106,4 +106,4 @@ whisper audio.mp3 --model medium --language ja --word_timestamps True
 
 ---
 
-[← 目次に戻る](./) | [前: オープンLLM](08-open-models) | [次: API経由でのLLM利用 →](10-api-usage)
+[← 目次に戻る](./) | [前: オープンLLM](09-open-models) | [次: API経由でのLLM利用 →](11-api-usage)
