@@ -12,6 +12,7 @@ title: AI活用ガイド
 2. [Anthropic 公式 AI エージェントパターン](02-agent-patterns)
 3. [MCP サーバーの活用](03-mcp-servers)
 4. [手製 AI オーケストレーションツール](04-custom-orchestration)
+5. [Claude Code を上手く使うためのベストプラクティス](05-claude-code-best-practices)
 
 ---
 
