@@ -93,7 +93,7 @@ APIは**トークン単位の従量課金**が基本です。
 | モデル | 入力 | 出力 | 備考 |
 |--------|------|------|------|
 | Claude Sonnet | $3 | $15 | 日常の開発に最適 |
-| Claude Opus | $15 | $75 | 最高性能だがコスト高 |
+| Claude Opus | $5 | $25 | 最高性能。以前より大幅値下げ |
 | GPT-4o | $2.5 | $10 | バランス型 |
 | GPT-4o-mini | $0.15 | $0.6 | 大量処理向け |
 | Gemini Flash | $0.075 | $0.3 | 最安クラス |
@@ -137,6 +137,55 @@ print(response.choices[0].message.content)
 
 **注目ポイント：** `base_url` を変えるだけで、クラウド↔ローカル↔別プロバイダーを切り替えられます。コードの変更は最小限。
 
+### Python（Anthropic SDK）
+
+Anthropic のモデルを使う場合は、専用の SDK もあります。
+
+```python
+from anthropic import Anthropic
+
+client = Anthropic(api_key="sk-ant-xxx")
+
+message = client.messages.create(
+    model="claude-sonnet-4-6",
+    max_tokens=1024,
+    messages=[
+        {"role": "user", "content": "Pythonでフィボナッチ数列を実装して"}
+    ]
+)
+
+print(message.content[0].text)
+```
+
+**ストリーミング（リアルタイム出力）：**
+
+```python
+with client.messages.stream(
+    model="claude-sonnet-4-6",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Hello"}]
+) as stream:
+    for text in stream.text_stream:
+        print(text, end="", flush=True)
+```
+
+**プロンプトキャッシング（コスト削減）：**
+
+長いシステムプロンプトやドキュメントを繰り返し使う場合、キャッシュすることでコストを最大90%削減できます。
+
+```python
+message = client.messages.create(
+    model="claude-sonnet-4-6",
+    max_tokens=1024,
+    system=[{
+        "type": "text",
+        "text": "あなたは○○の専門家です。以下のドキュメントを参照して回答してください...(長文)",
+        "cache_control": {"type": "ephemeral"}
+    }],
+    messages=[{"role": "user", "content": "質問"}]
+)
+```
+
 ### curl
 
 ```bash
@@ -158,6 +207,43 @@ curl https://api.openai.com/v1/chat/completions \
 | リアルタイム応答 | Groq（超低レイテンシ） |
 | コスト最小化 | ローカルLLM + LM Studio |
 | 最高品質が必要 | 直接API（Opus / GPT-5.5） |
+
+## APIキーのセキュリティ
+
+APIキーは**パスワードと同等**です。漏洩すると第三者に課金される危険があります。
+
+### やるべきこと
+
+```bash
+# 環境変数で管理する（コードに直書きしない）
+export ANTHROPIC_API_KEY="sk-ant-xxx"
+export OPENAI_API_KEY="sk-xxx"
+```
+
+```python
+import os
+from anthropic import Anthropic
+
+# 環境変数から読み込む
+client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+```
+
+### やってはいけないこと
+
+```python
+# NG: コードにAPIキーを直書き
+client = Anthropic(api_key="sk-ant-api03-xxxxx")
+
+# NG: .mcp.json にトークンを直書きしてgit commit
+```
+
+### チェックリスト
+
+- `.env` ファイルは `.gitignore` に追加する
+- APIキーはダッシュボードで定期的にローテーションする
+- 使用量アラートを設定して異常な課金を検知する
+- 不要になったキーは即座に無効化する
+- MCPの設定ファイル（`.mcp.json`）をgitにコミットしない
 
 ---
 

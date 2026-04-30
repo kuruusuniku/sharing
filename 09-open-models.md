@@ -36,7 +36,7 @@ MoE モデル
 |--------|--------|----------|:---:|------|
 | **Qwen 3.6-27B** | Alibaba | 27B | × | 最新Dense。397B MoEモデルを上回る性能。コンテキスト262K（最大1M） |
 | **Qwen 3.6-35B-A3B** | Alibaba | 35B（活性3B） | ○ | MoE。極めて高い計算効率で27B Dense並みの性能 |
-| **DeepSeek V4** | DeepSeek | ~1T（活性~35B） | ○ | 超大規模MoE。推論特化。コスト効率が非常に高い |
+| **DeepSeek V4 Pro** | DeepSeek | 1.6T（活性49B） | ○ | 超大規模MoE。推論特化。コスト効率が非常に高い |
 
 中華勢の強みは**コスト効率とサイズ展開の幅広さ**。特に Qwen 3.6 は Dense と MoE の両方を揃えており、用途に合わせて選べます。Qwen 3.6-27B はコーディング6ベンチマークで首位を獲得。
 
@@ -45,7 +45,7 @@ MoE モデル
 | モデル | 開発元 | パラメータ | MoE | 特徴 |
 |--------|--------|----------|:---:|------|
 | **Llama 4 Maverick** | Meta | 400B | ○ | MoE。オープンLLMの代表格。研究・商用ともに利用可能 |
-| **gpt-oss-120B** | OpenAI | 120B | × | OpenAI初のオープンウェイト。o4-mini匹敵。Apache 2.0 |
+| **gpt-oss-120B** | OpenAI | 120B | ○ | OpenAI初のオープンウェイト。MoEアーキテクチャ。o4-mini匹敵。Apache 2.0 |
 | **gpt-oss-20B** | OpenAI | 20B | × | o3-mini相当。16GBメモリで動作。エッジ向け |
 | **Mistral Large 3** | Mistral AI | 675B（活性41B） | ○ | 超大規模MoE。Apache 2.0。欧州言語に強い |
 | **Mistral Small 4** | Mistral AI | 119B（活性6B） | ○ | 推論・マルチモーダル・コーディング統合。256K コンテキスト |
@@ -77,7 +77,7 @@ MoE モデル
 | Mistral Small 4 | 119B | 6B | 軽量 |
 | Llama 4 Maverick | 400B | — | 中量級 |
 | Mistral Large 3 | 675B | 41B | 重量級 |
-| DeepSeek V4 | ~1T | ~35B | 重量級 |
+| DeepSeek V4 Pro | 1.6T | 49B | 重量級 |
 
 ## Hugging Face — オープンAIのハブ
 
