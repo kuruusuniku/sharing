@@ -30,7 +30,7 @@ MoE モデル
 
 ## オープンLLMの勢力図
 
-### 中華勢 — 急速に台頭
+### 中国発モデル — 急速に台頭
 
 | モデル | 開発元 | パラメータ | MoE | 特徴 |
 |--------|--------|----------|:---:|------|
@@ -38,7 +38,7 @@ MoE モデル
 | **Qwen 3.6-35B-A3B** | Alibaba | 35B（活性3B） | ○ | MoE。極めて高い計算効率で27B Dense並みの性能 |
 | **DeepSeek V4 Pro** | DeepSeek | 1.6T（活性49B） | ○ | 超大規模MoE。推論特化。コスト効率が非常に高い |
 
-中華勢の強みは**コスト効率とサイズ展開の幅広さ**。特に Qwen 3.6 は Dense と MoE の両方を揃えており、用途に合わせて選べます。Qwen 3.6-27B はコーディング6ベンチマークで首位を獲得。
+中国発モデルの強みは**コスト効率とサイズ展開の幅広さ**。特に Qwen 3.6 は Dense と MoE の両方を揃えており、用途に合わせて選べます。Qwen 3.6-27B はコーディング6ベンチマークで首位を獲得。
 
 ### 西側諸国
 
@@ -197,12 +197,49 @@ LM Studio を起動
  → チャット or ローカルAPIサーバーを起動
 ```
 
+### Ollama
+
+公式サイト: [ollama.com](https://ollama.com/)
+
+CLIベースのローカルLLM実行ツール。コマンド一発でモデルをダウンロード・実行できます。
+
+```bash
+# インストール
+curl -fsSL https://ollama.com/install.sh | sh
+
+# モデルを実行（自動ダウンロード）
+ollama run qwen3.6:27b
+
+# OpenAI互換APIサーバーとしても動作
+# http://localhost:11434/v1/chat/completions
+```
+
+- LM Studio より軽量・CLI向き
+- Docker との相性が良い（サーバー用途）
+- OpenAI 互換 API を自動で提供
+- macOS / Linux / Windows 対応
+
+**LM Studio vs Ollama：** GUIで試したいなら LM Studio、CLI/サーバー用途なら Ollama。
+
+### vLLM
+
+公式サイト: [docs.vllm.ai](https://docs.vllm.ai/)
+
+高速推論に特化したLLMサービングエンジン。**本番環境でLLMをAPIとして提供する**ときの標準ツールです。
+
+- PagedAttention による高効率なメモリ管理
+- 複数リクエストの同時処理（バッチ推論）
+- OpenAI 互換 API
+- GPU サーバー向け
+
+個人利用というより、チームやサービスとしてLLMを提供する場合に使います。
+
 ### OpenCode
 
 CLIベースのAIコーディングツール。ローカルLLMをバックエンドに使えます。
 
 - Claude Code のようなCLI体験をローカルLLMで実現
-- LM Studio のローカルAPIと組み合わせて使う
+- LM Studio / Ollama のローカルAPIと組み合わせて使う
 - オフラインでのコーディング支援が可能
 
 ## 必要なマシンスペック
