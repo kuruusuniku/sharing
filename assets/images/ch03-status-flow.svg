@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300">
+  <rect width="700" height="300" fill="#f8f7f5" rx="6"/>
+  <!-- Title -->
+  <text x="350" y="24" text-anchor="middle" font-family="serif" font-size="14" fill="#1a1a1a" font-weight="bold">ステータス駆動のAI協業ワークフロー</text>
+  <!-- Legend -->
+  <rect x="480" y="38" width="12" height="12" rx="2" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1"/>
+  <text x="498" y="49" font-family="sans-serif" font-size="10" fill="#666">AIが担当</text>
+  <rect x="570" y="38" width="12" height="12" rx="2" fill="#fff3e0" stroke="#c05621" stroke-width="1"/>
+  <text x="588" y="49" font-family="sans-serif" font-size="10" fill="#666">人が担当</text>
+  <!-- Flow -->
+  <g transform="translate(60, 55)">
+    <!-- Todo -->
+    <rect x="0" y="0" width="110" height="32" rx="6" fill="#fff3e0" stroke="#c05621" stroke-width="1.5"/>
+    <text x="55" y="21" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#c05621" font-weight="bold">Todo</text>
+    <text x="55" y="48" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#999">タスク登録・論点整理</text>
+    <!-- Arrow -->
+    <line x1="110" y1="16" x2="140" y2="16" stroke="#999" stroke-width="1.5"/>
+    <polygon points="137,12 143,16 137,20" fill="#999"/>
+    <!-- AI-Plan-Ready -->
+    <rect x="143" y="0" width="130" height="32" rx="6" fill="#fff3e0" stroke="#c05621" stroke-width="1.5"/>
+    <text x="208" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#c05621" font-weight="bold">AI-Plan-Ready</text>
+    <text x="208" y="48" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#999">人が計画指示を出す</text>
+    <!-- Arrow -->
+    <line x1="273" y1="16" x2="303" y2="16" stroke="#999" stroke-width="1.5"/>
+    <polygon points="300,12 306,16 300,20" fill="#999"/>
+    <!-- AI-Planning -->
+    <rect x="306" y="0" width="120" height="32" rx="6" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="366" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#2b6cb0" font-weight="bold">AI-Planning</text>
+    <text x="366" y="48" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#999">AIが計画を作成</text>
+    <!-- Arrow -->
+    <line x1="426" y1="16" x2="456" y2="16" stroke="#999" stroke-width="1.5"/>
+    <polygon points="453,12 459,16 453,20" fill="#999"/>
+    <!-- 1st Review -->
+    <rect x="459" y="0" width="110" height="32" rx="6" fill="#fff3e0" stroke="#c05621" stroke-width="1.5"/>
+    <text x="514" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#c05621" font-weight="bold">1st Review</text>
+    <text x="514" y="48" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#999">人が計画をレビュー</text>
+    <!-- Return arrow -->
+    <path d="M480 32 C480 65, 230 65, 230 32" fill="none" stroke="#e53e3e" stroke-width="1" stroke-dasharray="4,2"/>
+    <polygon points="233,35 227,32 233,29" fill="#e53e3e"/>
+    <text x="355" y="72" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e53e3e">差し戻し</text>
+  </g>
+  <!-- Row 2 -->
+  <g transform="translate(60, 145)">
+    <!-- Arrow down from 1st Review -->
+    <line x1="514" y1="-38" x2="514" y2="-20" stroke="#999" stroke-width="1.5" transform="translate(-60,-90)"/>
+    <!-- AI-InProgress-Ready -->
+    <rect x="130" y="0" width="150" height="32" rx="6" fill="#fff3e0" stroke="#c05621" stroke-width="1.5"/>
+    <text x="205" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#c05621" font-weight="bold">AI-InProgress-Ready</text>
+    <text x="205" y="48" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#999">人が実行を承認</text>
+    <!-- Arrow -->
+    <line x1="280" y1="16" x2="310" y2="16" stroke="#999" stroke-width="1.5"/>
+    <polygon points="307,12 313,16 307,20" fill="#999"/>
+    <!-- AI-InProgress -->
+    <rect x="313" y="0" width="130" height="32" rx="6" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="378" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#2b6cb0" font-weight="bold">AI-InProgress</text>
+    <text x="378" y="48" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#999">AIが実装・実行</text>
+  </g>
+  <!-- Row 3 -->
+  <g transform="translate(60, 225)">
+    <!-- 2nd Review -->
+    <rect x="200" y="0" width="110" height="32" rx="6" fill="#fff3e0" stroke="#c05621" stroke-width="1.5"/>
+    <text x="255" y="21" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#c05621" font-weight="bold">2nd Review</text>
+    <text x="255" y="48" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#999">人が成果物をレビュー</text>
+    <!-- Arrow -->
+    <line x1="310" y1="16" x2="340" y2="16" stroke="#999" stroke-width="1.5"/>
+    <polygon points="337,12 343,16 337,20" fill="#999"/>
+    <!-- Done -->
+    <rect x="343" y="0" width="90" height="32" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="388" y="21" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#2e7d32" font-weight="bold">Done</text>
+  </g>
+  <!-- Connecting arrows between rows -->
+  <line x1="574" y1="87" x2="574" y2="120" stroke="#999" stroke-width="1.5"/>
+  <line x1="574" y1="120" x2="265" y2="120" stroke="#999" stroke-width="1.5"/>
+  <line x1="265" y1="120" x2="265" y2="145" stroke="#999" stroke-width="1.5"/>
+  <polygon points="261,142 265,148 269,142" fill="#999"/>
+  <line x1="438" y1="193" x2="438" y2="210" stroke="#999" stroke-width="1.5"/>
+  <line x1="438" y1="210" x2="315" y2="210" stroke="#999" stroke-width="1.5"/>
+  <line x1="315" y1="210" x2="315" y2="225" stroke="#999" stroke-width="1.5"/>
+  <polygon points="311,222 315,228 319,222" fill="#999"/>
+</svg>
