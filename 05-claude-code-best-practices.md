@@ -7,6 +7,8 @@ title: Claude Code を上手く使うためのベストプラクティス
 
 ![ベストプラクティス 4つの柱](assets/images/ch05-tips.svg)
 
+最初は何を聞いても「すごい」と思っていました。でも使い込むうちに、AIの出力品質が自分の指示の出し方に大きく依存することに気づきました。同じモデルでも、聞き方ひとつで結果がまるで違う。この章は、その試行錯誤から得た知見をまとめたものです。
+
 Anthropic が公式に公開しているベストプラクティスガイドのポイントをまとめます。
 
 > 原文: [Best Practices for Claude Code](https://www.anthropic.com/engineering/claude-code-best-practices)
