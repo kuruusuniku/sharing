@@ -7,6 +7,8 @@ title: Anthropic 公式 AI エージェントパターン
 
 ![5つのワークフローパターン](assets/images/ch02-patterns.svg)
 
+AIに1回指示を出して完璧な結果が返ってくることなんて、正直ほぼありません。何回もやり取りして、修正して、また確認して。じゃあそのやり取り自体を自動化できないか？ そう考えたとき、Anthropicが体系化したパターンがそのまま答えになりました。
+
 Anthropic は「[Building Effective Agents](https://www.anthropic.com/research/building-effective-agents)」という公式ガイドで、AI エージェントの設計パターンを体系化しています。
 
 重要な原則：**「複雑さは実証可能な改善があるときのみ追加する」**
@@ -88,7 +90,7 @@ Anthropic は「[Building Effective Agents](https://www.anthropic.com/research/b
 
 各ステップで環境からのフィードバック（ツール結果、コード実行結果）を得ることで、正確性を保ちます。Claude Code 自体がこのパターンで動作しています。
 
-## まずはエバリュエーターから始めよう
+## まずはエバリュエーターか��始めよう
 
 5つのパターンを紹介しましたが、**最初に取り入れるべきは間違いなくエバリュエーター・オプティマイザーです。**
 
