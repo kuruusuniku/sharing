@@ -15,8 +15,6 @@ title: 著者について
 
 今は大規模言語モデル（LLM）の時代。変な感じです。
 
-> 論文: [J-GLOBAL](https://jglobal.jst.go.jp/detail?JGLOBAL_ID=200902248452106071)
-
 ### 2010–2014 — 大手SIer
 
 業界5位くらいの会社でインフラエンジニア、SaaSエンジニアとして勤務。
